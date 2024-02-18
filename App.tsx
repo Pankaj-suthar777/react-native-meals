@@ -12,8 +12,28 @@ function App(): React.JSX.Element {
   return (
     <View style={styles.container}>
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="MealsCategories" component={CategoriesScreen} />
+        <Stack.Navigator
+          screenOptions={{
+            //if you want to apply for all screen
+            headerStyle: {
+              backgroundColor: '#351401',
+            },
+            headerTintColor: 'white',
+            contentStyle: {backgroundColor: '#3f2f25'},
+          }}>
+          <Stack.Screen
+            name="MealsCategories"
+            component={CategoriesScreen}
+            options={{
+              title: 'All Categories',
+              //if you want for just one screen
+              // headerStyle: {
+              //   backgroundColor: '#351401',
+              // },
+              // headerTintColor: 'white',
+              // contentStyle: {backgroundColor: '#3f2f25'},
+            }}
+          />
           <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
         </Stack.Navigator>
       </NavigationContainer>
